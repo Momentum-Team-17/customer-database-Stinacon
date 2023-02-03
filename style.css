@@ -17,7 +17,12 @@ h1 {
     
 } 
 
-.image
+.image {
+    border-bottom-left-radius: 40%;
+    border-bottom-right-radius: 60%;
+    border-top-left-radius: 60%;
+    border-top-right-radius: 40%  
+}
 
 .name
 
