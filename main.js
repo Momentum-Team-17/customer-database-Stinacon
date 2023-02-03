@@ -60,6 +60,13 @@ function buildCustomerHtml(customer) {
     //trying to convert date to show up in MM, day, YYYY format
     birthday = new Date(birthday).toLocaleDateString('en-us', {month: "short", day: "numeric", year: "numeric"});
     birthdayDiv.innerText = birthday
+
+    //create customer-since div
+    let customerSinceDiv = document.createElement('div');
+    customerSinceDiv.classList.add('customer-since');
+    let registered = customer.registered.date;
+    registered = new Date(registered).toLocaleDateString('en-us', {month: "short", day: "numeric", year: "numeric"});
+    customerSinceDiv.innerText = `${"Customer since: "} ${registered}`
     
     customerDiv.appendChild(imageDiv);
     customerDiv.appendChild(nameDiv);
@@ -67,6 +74,7 @@ function buildCustomerHtml(customer) {
     customerDiv.appendChild(streetDiv);
     customerDiv.appendChild(cityDiv);
     customerDiv.appendChild(birthdayDiv);
+    customerDiv.appendChild(customerSinceDiv);
     directory.appendChild(customerDiv)
 }
 }
