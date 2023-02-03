@@ -9,15 +9,14 @@ const directory = document.querySelector('#directory');
 for (let itemInArray of customers) {
     console.log("itemInArray;", itemInArray);
     buildCustomerHtml(itemInArray);
+   //Btw, when the loop is over, "itemInArray" doesn't mean anything, but they have to match
+    //I'm starting a loop, and in my loop I'm calling a function.
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1); {
     }  
+}//This is to be able to call this function below on the names to capitalize the first letter.
 
-
-    //Btw, when the loop is over, "itemInArray" doesn't mean anything, but they have to match
-    //I'm starting a loop, and in my loop I'm calling a function.
-}
 //Everything below is inside the loop BECAUSE calling the function by name (above) means everything inside the function below will be executed
 function buildCustomerHtml(customer) {
     console.log("customer;", customer);
@@ -35,7 +34,7 @@ function buildCustomerHtml(customer) {
     //create customer name div
     let nameDiv = document.createElement('h3');
     nameDiv.classList.add('name');
-    nameDiv.innerText = `${customer.name.first} ${customer.name.last}`;
+    nameDiv.innerText = `${capitalizeFirstLetter(customer.name.first)} ${capitalizeFirstLetter(customer.name.last)}`;
     
     //create email div
     let emailDiv = document.createElement('div');
