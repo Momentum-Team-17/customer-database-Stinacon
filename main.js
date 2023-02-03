@@ -20,7 +20,16 @@ function buildCustomerHtml(customers) {
         nameDiv.innerText = '${customer.name.first} ${customer.name.last}';
         //create email div
         let emailDiv = document.createElement('div');
-        emailDiv.classList.add('email')
-        emailDiv.innerText = '${customer.email}'
+        emailDiv.classList.add('email');
+        emailDiv.innerText = '${customer.email}';
+        //create street address div
+        let streetDiv = document.createElement('div');
+        streetDiv.classList.add('street');
+        streetDiv.innerText = '${customer.location.street.number} ${customer.location.street.name}';
+        //create city div
+        let cityDiv = document.createElement('div');
+        cityDiv.classList.add('city');
+        cityDiv.innerText = '${customer.location.city,} {customer.location.state} {customer.location.postcode}';
+
     }
 }
