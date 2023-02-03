@@ -10,14 +10,17 @@ function buildCustomerHtml(customers) {
         //create div(box) for each customer to hold name, img, all info
         let customerDiv = document.createElement('div');
         customerDiv.classList.add('customer');
-        //create div for just customer name
-        let nameDiv = document.createElement('div');
-        nameDiv.classList.add('name');
-        nameDiv.innerText = '${customer.name.first} ${customer.name.last}';
         //create image div
         let imageDiv = document.createElement('img');
         imageDiv.classList.add('image');
         imageDiv.src = customer.picture.medium;
-        //create 
+        //create customer name div
+        let nameDiv = document.createElement('h3');
+        nameDiv.classList.add('name');
+        nameDiv.innerText = '${customer.name.first} ${customer.name.last}';
+        //create email div
+        let emailDiv = document.createElement('div');
+        emailDiv.classList.add('email')
+        emailDiv.innerText = '${customer.email}'
     }
 }
