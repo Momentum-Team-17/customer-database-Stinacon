@@ -22,30 +22,36 @@ function capitalizeFirstLetter(string) {
 function buildCustomerHtml(customer) {
     console.log("customer;", customer);
     //Here, I am defining the function.
+    
     //create div(box) for each customer to hold name, img, all info
     let customerDiv = document.createElement('div');
     customerDiv.classList.add('customer');
 
-    // //create image div
-    // let imageDiv = document.createElement('img');
-    // imageDiv.classList.add('image');
-    // imageDiv.src = customer.picture.medium;
-    // //create customer name div
-    // let nameDiv = document.createElement('h3');
-    // nameDiv.classList.add('name');
-    // nameDiv.innerText = `${customer.name.first} ${customer.name.last}`;
-    // //create email div
-    // let emailDiv = document.createElement('div');
-    // emailDiv.classList.add('email');
-    // emailDiv.innerText = `${customer.email}`;
-    // //create street address div
-    // let streetDiv = document.createElement('div');
-    // streetDiv.classList.add('street');
-    // streetDiv.innerText = `${customer.location.street.number} ${customer.location.street.name}`;
-    // //create city div
-    // let cityDiv = document.createElement('div');
-    // cityDiv.classList.add('city');
-    // cityDiv.innerText = `${customer.location.city,} ${customer.location.state} ${customer.location.postcode}`;
+    //create image div
+    let imageDiv = document.createElement('img');
+    imageDiv.classList.add('image');
+    imageDiv.src = customer.picture.medium;
+    
+    //create customer name div
+    let nameDiv = document.createElement('h3');
+    nameDiv.classList.add('name');
+    nameDiv.innerText = `${customer.name.first} ${customer.name.last}`;
+    
+    //create email div
+    let emailDiv = document.createElement('div');
+    emailDiv.classList.add('email');
+    emailDiv.innerText = `${customer.email}`;
+    
+    //create street address div
+    let streetDiv = document.createElement('div');
+    streetDiv.classList.add('street');
+    streetDiv.innerText = `${customer.location.street.number} ${customer.location.street.name}`;
+    
+    //create city div
+    let cityDiv = document.createElement('div');
+    cityDiv.classList.add('city');
+    cityDiv.innerText = `${customer.location.city} ${customer.location.state} ${customer.location.postcode}`;
+    
     //create birthday div
     let birthdayDiv = document.createElement('div');
     birthdayDiv.classList.add('birthday');
@@ -55,7 +61,13 @@ function buildCustomerHtml(customer) {
     //trying to convert date to show up in MM, day, YYYY format
     birthday = new Date(birthday).toLocaleDateString('en-us', {month: "short", day: "numeric", year: "numeric"});
     birthdayDiv.innerText = birthday
-    customerDiv.appendChild(birthdayDiv)
+    
+    customerDiv.appendChild(imageDiv);
+    customerDiv.appendChild(nameDiv);
+    customerDiv.appendChild(emailDiv);
+    customerDiv.appendChild(streetDiv);
+    customerDiv.appendChild(cityDiv);
+    customerDiv.appendChild(birthdayDiv);
     directory.appendChild(customerDiv)
 }
 }
