@@ -49,7 +49,8 @@ function buildCustomerHtml(customer) {
     //create city div
     let cityDiv = document.createElement('div');
     cityDiv.classList.add('city');
-    cityDiv.innerText = `${customer.location.city} ${customer.location.state} ${customer.location.postcode}`;
+    state = nameToAbbr(customer.location.state)
+    cityDiv.innerText = `${customer.location.city} ${state} ${customer.location.postcode}`;
     
     //create birthday div
     let birthdayDiv = document.createElement('div');
